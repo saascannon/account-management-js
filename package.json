@@ -1,0 +1,46 @@
+{
+  "name": "@saascannon/account-management-js",
+  "version": "0.0.1",
+  "description": "Javascript SDK for interfacing with the Saascannon account management api in the browser.",
+  "main": "dist/node/index.cjs",
+  "module": "dist/node/index.js",
+  "types": "dist/node/index.d.ts",
+  "type": "module",
+  "author": {
+    "name": "Saascannon",
+    "email": "support@saascannon.com",
+    "url": "https://saascannon.com"
+  },
+  "scripts": {
+    "gen-package-lock": "npm i --package-lock-only --workspaces false",
+    "dev": "nodemon --watch openapi-spec/spec/openapi.json --exec \"openapi --input openapi-spec/spec/openapi.json --output client --name SaascannonAccountManagement --useUnionTypes && tsup\"",
+    "build": "openapi --input openapi-spec/spec/openapi.json --output client --name SaascannonAccountManagement --useUnionTypes && tsup"
+  },
+  "keywords": [
+    "Saascannon"
+  ],
+  "files": [
+    "dist/node",
+    "dist/browser"
+  ],
+  "devDependencies": {
+    "nodemon": "^2.0.22",
+    "tsup": "^8.3.0",
+    "openapi-typescript-codegen": "^0.23.0"
+  },
+  "license": "MIT",
+  "browser": "./dist/browser/index.global.js",
+  "unpkg": "./dist/browser/index.global.js",
+  "exports": {
+    ".": {
+      "require": "./dist/node/index.cjs",
+      "import": "./dist/node/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "homepage": "https://github.com/saascannon/account-management-js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saascannon/account-management-js.git"
+  }
+}
