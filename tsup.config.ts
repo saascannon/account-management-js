@@ -16,11 +16,9 @@ export default defineConfig([
     cjsInterop: true,
     bundle: true,
     esbuildOptions(options) {
-      // Customize esbuild options to avoid assigning to default
-      options.globalName = "SaascannonAccountManagement";
       options.footer = {
         // Ensure the default export is directly assigned to the global scope
-        js: `window.SaascannonAccountManagement = SaascannonAccountManagement.default || SaascannonAccountManagement;`,
+        js: `window.SaascannonAccountManagement = SaascannonAccountManagement.SaascannonAccountManagement;`,
       };
     },
   },
@@ -33,5 +31,6 @@ export default defineConfig([
     platform: "node",
     sourcemap: false,
     dts: true, // Generate .d.ts files
+    clean: true,
   },
 ]);
