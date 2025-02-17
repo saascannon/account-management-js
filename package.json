@@ -25,8 +25,9 @@
   ],
   "devDependencies": {
     "nodemon": "^2.0.22",
+    "openapi-typescript-codegen": "^0.23.0",
     "tsup": "^8.3.0",
-    "openapi-typescript-codegen": "^0.23.0"
+    "typescript": "^5.7.3"
   },
   "license": "MIT",
   "browser": "./dist/browser/index.global.js",
